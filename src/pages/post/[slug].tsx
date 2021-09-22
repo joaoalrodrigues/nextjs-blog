@@ -51,13 +51,13 @@ function getReadingAverageTime(post: Post): number {
 }
 
 export default function Post({ post }: PostProps): JSX.Element {
-  const readingTime = getReadingAverageTime(post);
-
   const router = useRouter();
 
   if (router.isFallback) {
-    return <div className={commonStyles.container}>Carregando....</div>;
+    return <div className={commonStyles.container}>Carregando...</div>;
   }
+
+  const readingTime = getReadingAverageTime(post);
 
   return (
     <>
@@ -107,7 +107,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await prismic.query(
     [Prismic.Predicates.at('document.type', 'post')],
     {
-      fetch: 'post.uid',
+      orderings: '[post.first_publication_date]',
       pageSize: 1,
     }
   );
