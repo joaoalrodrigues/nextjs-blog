@@ -1,1 +1,51 @@
-// TODO
+.bannerContainer {
+    max-height: fit-content;
+    
+    img {
+        width: calc(100vw - 1rem);
+        background-size: contain;
+    }
+}
+
+.post {
+    max-width: 720px;
+    margin: 5rem auto;
+    text-align: justify;
+
+    p {
+        margin-top: 0.5rem;
+    }
+
+
+.postInfo {
+    display: flex;
+        align-items: center;
+        margin-top: 1rem;
+
+        font-size: 1rem;
+        color: var(--gray-200);
+
+        div{
+            display: flex;
+            align-items: center;            
+            margin-right: 2rem;
+
+            img{
+                margin-right: .6rem;
+            }
+        }
+}
+
+    .postBody {
+        margin-top: 3rem;
+        line-height: 1.5;
+
+        span{
+            color: var(--pink-600);
+        }
+
+        p{
+            margin-top: 2rem;            
+        }
+    }
+}
